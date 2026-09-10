@@ -32,8 +32,18 @@ html {
 body {
     background-color: var(--cor-fundo);
     color: var(--cor-texto);
-    font-family: "Inter", sans-serif;
-    line-height: 1.6;
+
+    background-image:
+        linear-gradient(
+            rgba(8, 11, 13, 0.72),
+            rgba(8, 11, 13, 0.72)
+        ),
+        url("img/backgroundfoto.png");
+
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
 }
 
 
