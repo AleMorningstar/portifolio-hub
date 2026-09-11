@@ -59,99 +59,242 @@ section[id] {
 
 
 /* =========================
-   3. HEADER / NAVEGAÇÃO
-   ========================= */
+   HEADER / NAVEGAÇÃO
+========================= */
 
 header {
-    padding: 18px 60px;
+    height: 72px;
+    padding: 0 50px;
 
-    background-color: rgba(21, 26, 30, 0.96);
+    background-color: rgba(9, 13, 16, 0.90);
 
-    border-bottom: 1px solid var(--cor-destaque);
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    border-bottom: 1px solid rgba(165, 138, 82, 0.28);
 
     position: sticky;
     top: 0;
     z-index: 100;
+
+    backdrop-filter: blur(8px);
+
+    display: flex;
+    align-items: center;
+
+    overflow: hidden;
 }
 
 
-/* LOGO */
+/* =========================
+   MENU
+========================= */
 
-.logo {
+.menu {
+    width: 100%;
+    max-width: 1050px;
+    height: 100%;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: 1fr auto 1fr;
+
+    align-items: center;
+}
+
+
+/* =========================
+   GRUPOS
+========================= */
+
+.menu-grupo {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 30px;
+}
+
+.menu-esquerda {
+    justify-content: flex-end;
+    padding-right: 30px;
+}
+
+.menu-direita {
+    justify-content: flex-start;
+    padding-left: 30px;
+}
+
+
+/* =========================
+   LOGO
+========================= */
+
+.logo {
+    width: 58px;
+    height: 58px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+
+    color: var(--cor-destaque);
+
+    text-decoration: none;
 }
 
 
 .logo span {
-    width: 38px;
-    height: 38px;
+    font-family: "Cinzel", serif;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    font-size: 30px;
+    font-weight: 500;
 
-    border: 1px solid var(--cor-destaque);
+    letter-spacing: -3px;
 
     color: var(--cor-destaque);
-
-    font-family: "Cinzel", serif;
-    font-size: 14px;
-}
-
-
-.logo div {
-    display: flex;
-    flex-direction: column;
-}
-
-
-.logo strong {
-    font-family: "Cinzel", serif;
-    font-size: 14px;
-    letter-spacing: 1px;
-}
-
-
-.logo small {
-    color: var(--cor-destaque);
-    font-size: 10px;
-    letter-spacing: 2px;
-}
-
-
-/* NAVEGAÇÃO */
-
-nav {
-    display: flex;
-    align-items: center;
-    gap: 26px;
-}
-
-
-nav a {
-    position: relative;
-
-    font-size: 14px;
-    letter-spacing: 1px;
-
-    padding: 8px 0;
 
     transition: 0.3s ease;
 }
 
 
-nav a:hover {
+/* linhas laterais do AS */
+
+.logo::before,
+.logo::after {
+    content: "";
+
+    position: absolute;
+
+    width: 1px;
+    height: 18px;
+
+    background-color: rgba(165, 138, 82, 0.75);
+}
+
+.logo::before {
+    left: 0;
+}
+
+.logo::after {
+    right: 0;
+}
+
+
+.logo:hover span {
+    color: #c2a96d;
+}
+
+
+/* =========================
+   LINKS
+========================= */
+
+.menu a {
+    position: relative;
+
+    color: var(--cor-texto);
+
+    font-family: "Inter", sans-serif;
+
+    font-size: 12px;
+
+    letter-spacing: 1.4px;
+
+    text-decoration: none;
+
+    white-space: nowrap;
+
+    padding: 7px 0;
+
+    transition: color 0.3s ease;
+}
+
+
+.menu a:hover {
     color: var(--cor-destaque);
 }
 
 
-nav a::after {
+/* linha inferior */
+
+.menu a:not(.logo)::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
+    width: 0;
+    height: 1px;
+
+    background-color: var(--cor-destaque);
+
+    transition: width 0.3s ease;
+}
+
+
+.menu a:not(.logo):hover::after {
+    width: 100%;
+}
+
+
+/* =========================
+   SEPARADOR DO CONTATO
+========================= */
+
+.menu-separador {
+    width: 1px;
+    height: 18px;
+
+    margin-left: 8px;
+    margin-right: 4px;
+
+    background-color: rgba(165, 138, 82, 0.55);
+}
+
+header::before,
+header::after {
+    content: "";
+
+    position: absolute;
+
+    top: 12px;
+    bottom: 12px;
+
+    width: 22px;
+
+    pointer-events: none;
+
+    opacity: 0.65;
+}
+
+
+/* esquerda */
+
+header::before {
+    left: 12px;
+
+    border-left: 1px solid var(--cor-destaque);
+    border-top: 1px solid var(--cor-destaque);
+    border-bottom: 1px solid rgba(165, 138, 82, 0.25);
+}
+
+
+/* direita */
+
+header::after {
+    right: 12px;
+
+    border-right: 1px solid var(--cor-destaque);
+    border-top: 1px solid var(--cor-destaque);
+    border-bottom: 1px solid rgba(165, 138, 82, 0.25);
+}
+
+
+/* LINHA ABAIXO DO LINK */
+
+.menu a:not(.logo)::after {
     content: "";
 
     position: absolute;
@@ -168,10 +311,9 @@ nav a::after {
 }
 
 
-nav a:hover::after {
+.menu a:not(.logo):hover::after {
     width: 100%;
 }
-
 
 /* =========================
    4. TIPOGRAFIA
@@ -213,92 +355,217 @@ h2 {
 
 
 /* =========================
-   5. HERO
-   ========================= */
+   HERO
+========================= */
 
 .hero {
-    min-height: 90vh;
+    min-height: calc(100vh - 72px);
 
     display: flex;
     flex-direction: column;
+
     justify-content: center;
     align-items: center;
 
-    padding: 80px 60px;
-
     text-align: center;
 
+    padding: 70px 20px;
+
     background:
-    radial-gradient(
-        circle at center,
-        rgba(165, 138, 82, 0.07),
-        transparent 45%
-    );
+        radial-gradient(
+            circle at center,
+            rgba(165, 138, 82, 0.08),
+            transparent 45%
+        );
 }
 
 
+/* =========================
+   MOTTO
+========================= */
+
 .motto {
+    margin-bottom: 18px;
+
     color: var(--cor-destaque);
+
+    font-size: 11px;
+
+    letter-spacing: 5px;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================
+   PORTFÓLIO HUB
+========================= */
+
+.hero-titulo {
+    margin: 0;
 
     font-family: "Cinzel", serif;
 
-    font-size: 14px;
-    letter-spacing: 4px;
+    font-size: clamp(42px, 5vw, 70px);
 
-    margin-bottom: 10px;
-}
-
-
-.hero h1 {
-    font-size: 68px;
-
-    margin: 0 0 20px;
+    font-weight: 600;
 
     letter-spacing: 2px;
+
+    line-height: 1.1;
+
+    color: var(--cor-texto);
+}
+
+.hero-titulo span {
+    color: #8f1d1d;
+
+    text-shadow:
+        0 0 12px rgba(143, 29, 29, 0.18);
 }
 
 
-.hero-descricao {
-    max-width: 600px;
+/* =========================
+   IMAGEM
+========================= */
 
-    font-size: 18px;
+.hero-imagem {
+    width: 200px;
+    height: 200px;
 
-    line-height: 1.7;
+    margin: 30px 0 22px;
+
+    border: 1px solid rgba(165, 138, 82, 0.75);
+
+    padding: 5px;
+
+    position: relative;
+}
+
+
+.hero-imagem img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    filter: grayscale(20%);
+}
+
+
+/* pequenos detalhes da moldura */
+
+.hero-imagem::before,
+.hero-imagem::after {
+    content: "";
+
+    position: absolute;
+
+    width: 18px;
+    height: 18px;
+
+    border-color: var(--cor-destaque);
+
+    border-style: solid;
+
+    pointer-events: none;
+}
+
+.hero-imagem::before {
+    top: -6px;
+    left: -6px;
+
+    border-width: 1px 0 0 1px;
+}
+
+.hero-imagem::after {
+    right: -6px;
+    bottom: -6px;
+
+    border-width: 0 1px 1px 0;
+}
+
+
+/* =========================
+   NOME
+========================= */
+
+.hero-nome {
+    margin: 0;
+
+    font-family: "Cinzel", serif;
+
+    font-size: 28px;
+
+    font-weight: 600;
+
+    letter-spacing: 2px;
+
+    color: var(--cor-texto);
+}
+
+
+/* =========================
+   FRASE
+========================= */
+
+.hero-frase {
+    max-width: 500px;
+
+    margin-top: 12px;
 
     color: var(--cor-texto-secundario);
+
+    font-size: 14px;
+
+    line-height: 1.7;
 }
 
+
+/* =========================
+   BOTÕES
+========================= */
 
 .hero-botoes {
     display: flex;
 
-    gap: 20px;
+    justify-content: center;
 
-    margin-top: 35px;
+    gap: 18px;
+
+    margin-top: 28px;
 }
 
 
 .hero-botoes a {
-    min-width: 170px;
+    min-width: 150px;
 
-    padding: 13px 24px;
+    padding: 12px 22px;
 
-    border: 1px solid var(--cor-destaque);
+    border: 1px solid rgba(165, 138, 82, 0.7);
 
-    color: var(--cor-destaque);
+    color: var(--cor-texto);
 
-    text-align: center;
+    font-size: 11px;
 
-    letter-spacing: 1px;
+    letter-spacing: 1.5px;
+
+    text-transform: uppercase;
+
+    text-decoration: none;
 
     transition: 0.3s ease;
 }
 
 
 .hero-botoes a:hover {
-    background-color: var(--cor-destaque);
+    color: var(--cor-destaque);
 
-    color: var(--cor-fundo);
+    border-color: var(--cor-destaque);
+
+    background-color: rgba(165, 138, 82, 0.08);
 }
 
 
