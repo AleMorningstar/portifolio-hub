@@ -229,16 +229,11 @@ h2 {
     text-align: center;
 
     background:
-        radial-gradient(
-            circle at center,
-            rgba(165, 138, 82, 0.07),
-            transparent 45%
-        ),
-        linear-gradient(
-            to bottom,
-            var(--cor-fundo),
-            var(--cor-fundo-secundario)
-        );
+    radial-gradient(
+        circle at center,
+        rgba(165, 138, 82, 0.07),
+        transparent 45%
+    );
 }
 
 
@@ -314,12 +309,7 @@ h2 {
 .projetos-destaque {
     padding: 100px 60px;
 
-    background:
-        linear-gradient(
-            to bottom,
-            var(--cor-fundo-secundario),
-            var(--cor-fundo)
-        );
+   background: transparent;
 }
 
 
@@ -527,12 +517,7 @@ h2 {
 .tecnologias-section {
     padding: 100px 60px;
 
-    background:
-        linear-gradient(
-            to bottom,
-            var(--cor-fundo),
-            var(--cor-fundo-secundario)
-        );
+    background: transparent;
 }
 
 
@@ -635,14 +620,7 @@ h2 {
 .sobre {
     padding: 120px 60px;
 
-    background:
-        linear-gradient(
-            to bottom,
-            var(--cor-fundo),
-            var(--cor-fundo-secundario) 20%,
-            var(--cor-fundo-secundario) 80%,
-            var(--cor-fundo)
-        );
+   background: transparent;
 }
 
 
@@ -823,12 +801,7 @@ h2 {
 
     text-align: center;
 
-    background:
-        linear-gradient(
-            to bottom,
-            var(--cor-fundo),
-            var(--cor-fundo-secundario)
-        );
+    background: transparent;
 }
 
 
@@ -958,7 +931,7 @@ section::after {
 
     padding: 20px 60px;
 
-    background-color: var(--cor-fundo);
+   background-color: transparent;
 }
 
 
