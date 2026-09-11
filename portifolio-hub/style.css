@@ -875,45 +875,54 @@ footer p {
 
 
 /* =========================
-   11. ORNAMENTOS DAS SEÇÕES
-   ========================= */
+  11. BORDAS GÓTICAS DAS SEÇÕES (essa erdição foi experimenrtal!!)
+========================= */
 
 section {
     position: relative;
+    overflow: hidden;
 }
 
-
-section::before,
-section::after {
-    content: "";
-
+.borda-gotica {
     position: absolute;
+    width: 150px;
+    height: auto;
 
-    width: 35px;
-    height: 35px;
-
-    border-color: var(--cor-destaque);
-    border-style: solid;
-
-    opacity: 0.7;
+    opacity: 1.0;
 
     pointer-events: none;
+
+    z-index: 0;
 }
 
-
-section::before {
-    top: 25px;
-    left: 25px;
-
-    border-width: 1px 0 0 1px;
+.borda-superior-esquerda {
+    top: 15px;
+    left: 15px;
 }
 
+.borda-superior-direita {
+    top: 15px;
+    right: 15px;
+    transform: scaleX(-1);
+}
 
-section::after {
-    bottom: 25px;
-    right: 25px;
+.borda-inferior-esquerda {
+    bottom: 15px;
+    left: 15px;
+    transform: scaleY(-1);
+}
 
-    border-width: 0 1px 1px 0;
+.borda-inferior-direita {
+    bottom: 15px;
+    right: 15px;
+    transform: scale(-1);
+}
+
+/* Mantém o conteúdo acima da ornamentação */
+
+section > *:not(.borda-gotica) {
+    position: relative;
+    z-index: 1;
 }
 
 
@@ -1175,4 +1184,60 @@ section::after {
         height: 310px;
     }
 
+}
+
+@media (max-width: 900px) {
+
+    .borda-gotica {
+        width: 115px;
+    }
+
+    .borda-superior-esquerda,
+    .borda-superior-direita {
+        top: 10px;
+    }
+
+    .borda-inferior-esquerda,
+    .borda-inferior-direita {
+        bottom: 10px;
+    }
+
+    .borda-superior-esquerda,
+    .borda-inferior-esquerda {
+        left: 10px;
+    }
+
+    .borda-superior-direita,
+    .borda-inferior-direita {
+        right: 10px;
+    }
+}
+
+
+@media (max-width: 480px) {
+
+    .borda-gotica {
+        width: 75px;
+        opacity: 0.5;
+    }
+
+    .borda-superior-esquerda,
+    .borda-superior-direita {
+        top: 8px;
+    }
+
+    .borda-inferior-esquerda,
+    .borda-inferior-direita {
+        bottom: 8px;
+    }
+
+    .borda-superior-esquerda,
+    .borda-inferior-esquerda {
+        left: 8px;
+    }
+
+    .borda-superior-direita,
+    .borda-inferior-direita {
+        right: 8px;
+    }
 }
