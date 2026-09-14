@@ -1,0 +1,693 @@
+/* ========================================
+   RESET
+======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* ========================================
+   VARIÁVEIS
+======================================== */
+
+:root {
+    --cor-fundo: #0d1114;
+    --cor-fundo-secundario: #151a1e;
+
+    --cor-texto: #f1eee6;
+    --cor-texto-secundario: #a9adb0;
+
+    --cor-destaque: #a58a52;
+
+    --cor-borda: rgba(165, 138, 82, 0.28);
+    --cor-borda-hover: rgba(165, 138, 82, 0.75);
+}
+
+
+/* ========================================
+   BODY
+======================================== */
+
+body {
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    background:
+        radial-gradient(
+            circle at top,
+            rgba(165, 138, 82, 0.08),
+            transparent 45%
+        ),
+        var(--cor-fundo);
+
+    color: var(--cor-texto);
+
+    font-family: Arial, sans-serif;
+}
+
+
+/* ========================================
+   CONTEÚDO PRINCIPAL
+======================================== */
+
+.pagina-contato {
+    flex: 1;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 90px 25px;
+}
+
+
+/* ========================================
+   CONTAINER
+======================================== */
+
+.contato-container {
+    width: 100%;
+    max-width: 700px;
+
+    text-align: center;
+
+    position: relative;
+
+    padding: 55px 45px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(21, 26, 30, 0.92),
+            rgba(10, 13, 16, 0.88)
+        );
+
+    border: 1px solid var(--cor-borda);
+}
+
+
+/* ========================================
+   DETALHES ORNAMENTAIS
+======================================== */
+
+.contato-container::before,
+.contato-container::after {
+    content: "";
+
+    position: absolute;
+
+    width: 35px;
+    height: 35px;
+
+    border-color: var(--cor-destaque);
+    border-style: solid;
+
+    opacity: 0.7;
+}
+
+
+/* CANTO SUPERIOR ESQUERDO */
+
+.contato-container::before {
+    top: 15px;
+    left: 15px;
+
+    border-width: 1px 0 0 1px;
+}
+
+
+/* CANTO INFERIOR DIREITO */
+
+.contato-container::after {
+    right: 15px;
+    bottom: 15px;
+
+    border-width: 0 1px 1px 0;
+}
+
+
+/* ========================================
+   CABEÇALHO
+======================================== */
+
+.contato-cabecalho {
+    margin-bottom: 45px;
+}
+
+
+.contato-legenda {
+    display: block;
+
+    margin-bottom: 15px;
+
+    color: var(--cor-destaque);
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    letter-spacing: 3px;
+}
+
+
+.contato-cabecalho h1 {
+    margin-bottom: 18px;
+
+    color: var(--cor-texto);
+
+    font-family: Georgia, serif;
+
+    font-size: 42px;
+
+    font-weight: normal;
+
+    letter-spacing: 1px;
+}
+
+
+.contato-cabecalho p {
+    max-width: 500px;
+
+    margin: 0 auto;
+
+    color: var(--cor-texto-secundario);
+
+    font-size: 14px;
+
+    line-height: 1.8;
+}
+
+
+/* ========================================
+   LINKS DE CONTATO
+======================================== */
+
+.contato-links {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 14px;
+
+    text-align: left;
+}
+
+
+/* ========================================
+   ITEM
+======================================== */
+
+.contato-item {
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    padding: 18px 20px;
+
+    color: var(--cor-texto);
+
+    text-decoration: none;
+
+    background: rgba(13, 17, 20, 0.65);
+
+    border: 1px solid var(--cor-borda);
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        background-color 0.3s ease;
+}
+
+
+/* ========================================
+   HOVER
+======================================== */
+
+.contato-item:hover {
+    transform: translateX(5px);
+
+    border-color: var(--cor-borda-hover);
+
+    background: rgba(165, 138, 82, 0.06);
+}
+
+
+/* ========================================
+   ÍCONE
+======================================== */
+
+.contato-icone {
+    width: 42px;
+    height: 42px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    color: var(--cor-destaque);
+
+    border: 1px solid var(--cor-borda);
+
+    font-family: Georgia, serif;
+
+    font-size: 13px;
+
+    letter-spacing: 1px;
+}
+
+
+/* ========================================
+   INFORMAÇÕES
+======================================== */
+
+.contato-info {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+
+    flex: 1;
+}
+
+
+.contato-titulo {
+    color: var(--cor-texto);
+
+    font-family: Georgia, serif;
+
+    font-size: 16px;
+}
+
+
+.contato-descricao {
+    color: var(--cor-texto-secundario);
+
+    font-size: 12px;
+}
+
+
+/* ========================================
+   SETA
+======================================== */
+
+.contato-seta {
+    color: var(--cor-destaque);
+
+    font-size: 18px;
+
+    transition: transform 0.3s ease;
+}
+
+
+.contato-item:hover .contato-seta {
+    transform: translateX(5px);
+}
+
+
+/* ========================================
+   BOTÃO VOLTAR
+======================================== */
+
+.voltar {
+    display: inline-block;
+
+    margin-top: 35px;
+
+    padding: 11px 20px;
+
+    color: var(--cor-destaque);
+
+    border: 1px solid var(--cor-borda);
+
+    font-size: 10px;
+
+    letter-spacing: 1.5px;
+
+    text-transform: uppercase;
+
+    text-decoration: none;
+
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease,
+        border-color 0.3s ease;
+}
+
+
+.voltar:hover {
+    color: var(--cor-fundo);
+
+    background-color: var(--cor-destaque);
+
+    border-color: var(--cor-destaque);
+}
+
+
+/* ========================================
+   FOOTER
+======================================== */
+
+footer {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 20px;
+
+    padding: 20px 40px;
+
+    color: var(--cor-texto-secundario);
+
+    background: rgba(10, 13, 16, 0.95);
+
+    border-top: 1px solid var(--cor-borda);
+
+    font-size: 11px;
+
+    letter-spacing: 0.5px;
+}
+
+
+/* ========================================
+   RESPONSIVIDADE
+======================================== */
+
+@media (max-width: 768px) {
+
+    .pagina-contato {
+        padding: 60px 20px;
+    }
+
+
+    .contato-container {
+        padding: 45px 25px;
+    }
+
+
+    .contato-cabecalho h1 {
+        font-size: 35px;
+    }
+
+
+    footer {
+        flex-direction: column;
+
+        text-align: center;
+
+        padding: 18px 20px;
+    }
+}
+
+
+@media (max-width: 480px) {
+
+    .pagina-contato {
+        padding: 40px 15px;
+    }
+
+
+    .contato-container {
+        padding: 40px 20px;
+    }
+
+
+    .contato-cabecalho {
+        margin-bottom: 35px;
+    }
+
+
+    .contato-cabecalho h1 {
+        font-size: 30px;
+    }
+
+
+    .contato-cabecalho p {
+        font-size: 13px;
+    }
+
+
+    .contato-item {
+        padding: 15px;
+
+        gap: 12px;
+    }
+
+
+    .contato-icone {
+        width: 38px;
+        height: 38px;
+    }
+
+
+    .contato-titulo {
+        font-size: 14px;
+    }
+
+
+    .contato-descricao {
+        font-size: 11px;
+    }
+
+
+    .contato-seta {
+        font-size: 16px;
+    }
+}
+
+/* ========================================
+   NAVEGAÇÃO
+======================================== */
+
+header {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 18px 50px;
+
+    background: rgba(10, 13, 16, 0.94);
+
+    border-bottom: 1px solid var(--cor-borda);
+
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+}
+
+
+/* LOGO */
+
+.logo {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    color: var(--cor-texto);
+
+    text-decoration: none;
+}
+
+
+/* INICIAIS */
+
+.logo > span {
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    color: var(--cor-destaque);
+
+    border: 1px solid var(--cor-borda);
+
+    font-family: Georgia, serif;
+
+    font-size: 12px;
+
+    letter-spacing: 1px;
+}
+
+
+/* TEXTO DA LOGO */
+
+.logo div {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 3px;
+}
+
+
+.logo strong {
+    color: var(--cor-texto);
+
+    font-family: Georgia, serif;
+
+    font-size: 14px;
+
+    font-weight: normal;
+
+    letter-spacing: 0.5px;
+}
+
+
+.logo small {
+    color: var(--cor-texto-secundario);
+
+    font-size: 9px;
+
+    letter-spacing: 1.5px;
+
+    text-transform: uppercase;
+}
+
+
+/* MENU */
+
+header nav {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+}
+
+
+/* LINKS */
+
+header nav a {
+    position: relative;
+
+    padding: 9px 15px;
+
+    color: var(--cor-texto-secundario);
+
+    font-size: 11px;
+
+    letter-spacing: 1px;
+
+    text-decoration: none;
+
+    transition:
+        color 0.3s ease,
+        background-color 0.3s ease;
+}
+
+
+/* LINHA DOURADA */
+
+header nav a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    bottom: 2px;
+
+    width: 0;
+    height: 1px;
+
+    background: var(--cor-destaque);
+
+    transform: translateX(-50%);
+
+    transition: width 0.3s ease;
+}
+
+
+/* HOVER */
+
+header nav a:hover {
+    color: var(--cor-texto);
+}
+
+
+header nav a:hover::after {
+    width: 45%;
+}
+
+
+/* ITEM ATIVO */
+
+header nav a.ativo {
+    color: var(--cor-destaque);
+}
+
+
+header nav a.ativo::after {
+    width: 45%;
+}
+
+
+/* ========================================
+   RESPONSIVIDADE DO MENU
+======================================== */
+
+@media (max-width: 768px) {
+
+    header {
+        flex-direction: column;
+
+        gap: 18px;
+
+        padding: 18px 20px;
+    }
+
+
+    header nav {
+        width: 100%;
+
+        justify-content: center;
+
+        flex-wrap: wrap;
+    }
+
+
+    header nav a {
+        padding: 8px 10px;
+
+        font-size: 10px;
+    }
+}
+
+
+@media (max-width: 480px) {
+
+    .logo strong {
+        font-size: 12px;
+    }
+
+
+    .logo small {
+        font-size: 8px;
+    }
+
+
+    header nav {
+        gap: 2px;
+    }
+
+
+    header nav a {
+        padding: 7px 8px;
+
+        font-size: 9px;
+    }
+}

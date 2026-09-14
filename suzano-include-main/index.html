@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Sistema de registro e organização de atividades."
+    >
+
+    <title>Registro de Atividades</title>
+
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/menu.css">
+</head>
+
+<body>
+
+    <header class="menu">
+
+        <div class="marca">
+            <span class="marca-simbolo">RA</span>
+
+            <div>
+                <strong>Registro</strong>
+                <small>de Atividades</small>
+            </div>
+        </div>
+
+        <nav>
+            <a class="menu-item ativo" href="index.html">
+                Início
+            </a>
+
+            <a class="menu-item" href="sobre.html">
+                Sobre
+            </a>
+
+            <a class="menu-item" href="contato.html">
+                Contato
+            </a>
+        </nav>
+
+    </header>
+
+
+    <main>
+
+        <!-- ÁREA DE CADASTRO -->
+
+        <section class="painel-cadastro">
+
+            <div class="titulo-painel">
+                <span class="numero-secao">01</span>
+
+                <div>
+                    <span class="legenda">
+                        NOVO REGISTRO
+                    </span>
+
+                    <h1>
+                        Cadastrar atividade
+                    </h1>
+                </div>
+            </div>
+
+
+            <form class="cadastro-atividade">
+
+                <div class="campo">
+
+                    <label for="descricao">
+                        Descrição
+                    </label>
+
+                    <input
+                        type="text"
+                        id="descricao"
+                        placeholder="Ex: Estudar JavaScript"
+                    >
+
+                </div>
+
+
+                <div class="campo">
+
+                    <label for="complexidade">
+                        Complexidade
+                    </label>
+
+                    <select id="complexidade">
+
+                        <option value="">
+                            Selecione uma opção
+                        </option>
+
+                        <option value="Baixa">
+                            Baixa
+                        </option>
+
+                        <option value="Média">
+                            Média
+                        </option>
+
+                        <option value="Alta">
+                            Alta
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="campo">
+
+                    <label for="data-entrega">
+                        Data de entrega
+                    </label>
+
+                    <input
+                        type="date"
+                        id="data-entrega"
+                    >
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    id="salvaAtividade"
+                >
+                    Salvar atividade
+                </button>
+
+                <p
+                    class="mensagem"
+                    id="mensagem"
+                    aria-live="polite"
+                ></p>
+
+            </form>
+
+        </section>
+
+
+        <!-- PAINEL DE ATIVIDADES -->
+
+        <section
+            class="painel-atividades"
+            id="painel-atividade"
+        >
+
+            <div class="cabecalho-atividades">
+
+                <div>
+
+                    <span class="legenda">
+                        ATIVIDADES REGISTRADAS
+                    </span>
+
+                    <h2>
+                        Meu painel
+                    </h2>
+
+                </div>
+
+                <span
+                    class="contador"
+                    id="contador"
+                >
+                    0 atividades
+                </span>
+
+            </div>
+
+
+            <div
+                class="lista-atividades"
+                id="lista-atividades"
+            >
+
+                <div
+                    class="estado-vazio"
+                    id="estado-vazio"
+                >
+                    <span class="estado-numero">
+                        —
+                    </span>
+
+                    <h3>
+                        Nenhuma atividade registrada
+                    </h3>
+
+                    <p>
+                        Cadastre uma atividade ao lado
+                        para que ela apareça neste painel.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer class="rodape">
+
+        <p>
+            Registro de Atividades
+        </p>
+
+        <span>
+            Projeto desenvolvido durante minha formação.
+        </span>
+
+    </footer>
+
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>

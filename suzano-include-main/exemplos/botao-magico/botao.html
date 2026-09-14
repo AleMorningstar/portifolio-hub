@@ -1,0 +1,17 @@
+<html>
+    <body>
+        <h4>Página inicial do sistema</h4>
+        <div id="div_conteudo">
+            <h1 id="titulo">Bem-vindo à Semana 2!</h1>
+            <button onclick="mudarTexto('Qual o texto?')">NOME QUE APARECE NA TELA</button>
+            <button onclick="mudarTexto('Bem vindo a semana 4')">Semana 4</button>
+            <button onclick="mudarTexto('ERRO inesperado')">Deu ruim no código!</button>
+        </div>
+    </body>
+    <script>
+    function mudarTexto(texto) {
+        let tituloDaPagina = document.getElementById("titulo");
+        tituloDaPagina.innerHTML = texto;
+    }
+    </script>
+</html>

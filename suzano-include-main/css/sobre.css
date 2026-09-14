@@ -1,0 +1,403 @@
+/* ========================================
+   RESET
+======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* ========================================
+   VARIÁVEIS
+======================================== */
+
+:root {
+    --cor-fundo: #0d1114;
+    --cor-fundo-secundario: #151a1e;
+
+    --cor-texto: #f1eee6;
+    --cor-texto-secundario: #a9adb0;
+
+    --cor-destaque: #a58a52;
+
+    --cor-borda: rgba(165, 138, 82, 0.28);
+    --cor-borda-hover: rgba(165, 138, 82, 0.75);
+}
+
+
+/* ========================================
+   BODY
+======================================== */
+
+body {
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    background:
+        radial-gradient(
+            circle at top,
+            rgba(165, 138, 82, 0.08),
+            transparent 45%
+        ),
+        var(--cor-fundo);
+
+    color: var(--cor-texto);
+
+    font-family: Arial, sans-serif;
+}
+
+
+/* ========================================
+   CONTEÚDO PRINCIPAL
+======================================== */
+
+.pagina-sobre {
+    flex: 1;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 80px 25px;
+}
+
+
+/* ========================================
+   CONTAINER
+======================================== */
+
+.sobre-container {
+    position: relative;
+
+    width: 100%;
+    max-width: 850px;
+
+    padding: 55px 55px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(21, 26, 30, 0.92),
+            rgba(10, 13, 16, 0.88)
+        );
+
+    border: 1px solid var(--cor-borda);
+}
+
+
+/* ========================================
+   ORNAMENTAÇÃO
+======================================== */
+
+.sobre-container::before,
+.sobre-container::after {
+    content: "";
+
+    position: absolute;
+
+    width: 35px;
+    height: 35px;
+
+    border-color: var(--cor-destaque);
+    border-style: solid;
+
+    opacity: 0.7;
+}
+
+
+.sobre-container::before {
+    top: 15px;
+    left: 15px;
+
+    border-width: 1px 0 0 1px;
+}
+
+
+.sobre-container::after {
+    right: 15px;
+    bottom: 15px;
+
+    border-width: 0 1px 1px 0;
+}
+
+
+/* ========================================
+   CABEÇALHO
+======================================== */
+
+.sobre-cabecalho {
+    text-align: center;
+
+    margin-bottom: 50px;
+}
+
+
+.sobre-legenda {
+    display: block;
+
+    margin-bottom: 15px;
+
+    color: var(--cor-destaque);
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    letter-spacing: 3px;
+}
+
+
+.sobre-cabecalho h1 {
+    margin-bottom: 18px;
+
+    color: var(--cor-texto);
+
+    font-family: Georgia, serif;
+
+    font-size: 40px;
+
+    font-weight: normal;
+
+    letter-spacing: 1px;
+}
+
+
+.sobre-cabecalho p {
+    max-width: 580px;
+
+    margin: 0 auto;
+
+    color: var(--cor-texto-secundario);
+
+    font-size: 14px;
+
+    line-height: 1.8;
+}
+
+
+/* ========================================
+   CONTEÚDO
+======================================== */
+
+.sobre-conteudo {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 0;
+}
+
+
+/* ========================================
+   BLOCOS
+======================================== */
+
+.sobre-bloco {
+    display: grid;
+
+    grid-template-columns: 55px 1fr;
+
+    gap: 25px;
+
+    padding: 28px 0;
+
+    border-top: 1px solid var(--cor-borda);
+}
+
+
+.sobre-bloco:last-child {
+    border-bottom: 1px solid var(--cor-borda);
+}
+
+
+/* ========================================
+   NÚMERO
+======================================== */
+
+.sobre-numero {
+    color: var(--cor-destaque);
+
+    font-family: Georgia, serif;
+
+    font-size: 13px;
+
+    letter-spacing: 2px;
+}
+
+
+/* ========================================
+   TÍTULO
+======================================== */
+
+.sobre-bloco h2 {
+    margin-bottom: 10px;
+
+    color: var(--cor-texto);
+
+    font-family: Georgia, serif;
+
+    font-size: 21px;
+
+    font-weight: normal;
+
+    letter-spacing: 0.5px;
+}
+
+
+/* ========================================
+   TEXTO
+======================================== */
+
+.sobre-bloco p {
+    max-width: 650px;
+
+    color: var(--cor-texto-secundario);
+
+    font-size: 13px;
+
+    line-height: 1.8;
+}
+
+
+/* ========================================
+   BOTÃO VOLTAR
+======================================== */
+
+.voltar {
+    display: block;
+
+    width: fit-content;
+
+    margin: 35px auto 0;
+
+    padding: 11px 20px;
+
+    color: var(--cor-destaque);
+
+    border: 1px solid var(--cor-borda);
+
+    font-size: 10px;
+
+    letter-spacing: 1.5px;
+
+    text-transform: uppercase;
+
+    text-decoration: none;
+
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease,
+        border-color 0.3s ease;
+}
+
+
+.voltar:hover {
+    color: var(--cor-fundo);
+
+    background-color: var(--cor-destaque);
+
+    border-color: var(--cor-destaque);
+}
+
+
+/* ========================================
+   FOOTER
+======================================== */
+
+footer {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 20px;
+
+    padding: 20px 40px;
+
+    color: var(--cor-texto-secundario);
+
+    background: rgba(10, 13, 16, 0.95);
+
+    border-top: 1px solid var(--cor-borda);
+
+    font-size: 11px;
+
+    letter-spacing: 0.5px;
+}
+
+
+/* ========================================
+   RESPONSIVIDADE
+======================================== */
+
+@media (max-width: 768px) {
+
+    .pagina-sobre {
+        padding: 60px 20px;
+    }
+
+
+    .sobre-container {
+        padding: 45px 30px;
+    }
+
+
+    .sobre-cabecalho h1 {
+        font-size: 33px;
+    }
+
+
+    footer {
+        flex-direction: column;
+
+        text-align: center;
+
+        padding: 18px 20px;
+    }
+}
+
+
+@media (max-width: 480px) {
+
+    .pagina-sobre {
+        padding: 40px 15px;
+    }
+
+
+    .sobre-container {
+        padding: 40px 20px;
+    }
+
+
+    .sobre-cabecalho h1 {
+        font-size: 28px;
+    }
+
+
+    .sobre-cabecalho p {
+        font-size: 13px;
+    }
+
+
+    .sobre-bloco {
+        grid-template-columns: 40px 1fr;
+
+        gap: 15px;
+
+        padding: 23px 0;
+    }
+
+
+    .sobre-bloco h2 {
+        font-size: 18px;
+    }
+
+
+    .sobre-bloco p {
+        font-size: 12px;
+    }
+}
