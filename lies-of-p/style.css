@@ -1,0 +1,667 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+:root{
+    --fundo:#080a0c;
+    --fundo-secundario:#111416;
+    --texto:#eee9df;
+    --texto-secundario:#aaa59d;
+    --dourado:#a58a52;
+    --dourado-suave:rgba(165,138,82,.25);
+    --vermelho:#7d2525;
+    --borda:rgba(165,138,82,.28);
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    min-height:100vh;
+    background:#080a0c;
+    color:var(--texto);
+    font-family:"Segoe UI",Tahoma,Geneva,Verdana,sans-serif;
+}
+
+/* BACKGROUNDS */
+
+.backgrounds{
+    position:fixed;
+    inset:0;
+    z-index:-2;
+    overflow:hidden;
+}
+
+.background{
+    position:absolute;
+    inset:0;
+    background-position:center;
+    background-size:cover;
+    background-repeat:no-repeat;
+    opacity:0;
+    transition:opacity 1.2s ease;
+}
+
+.background::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+        linear-gradient(
+            rgba(5,7,8,.62),
+            rgba(5,7,8,.82)
+        );
+}
+
+.background-1{
+    background-image:url("img/bg-hero.jpg");
+}
+
+.background-2{
+    background-image:url("img/bg-krat.jpg");
+}
+
+.background.ativo{
+    opacity:1;
+}
+
+/* HEADER */
+
+.menu{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:76px;
+    z-index:10;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:0 55px;
+
+    background:rgba(7,9,10,.86);
+    border-bottom:1px solid var(--borda);
+    backdrop-filter:blur(8px);
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+
+    color:var(--texto);
+    text-decoration:none;
+}
+
+.logo > span{
+    width:38px;
+    height:38px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border:1px solid var(--dourado);
+    color:var(--dourado);
+
+    font-family:Georgia,serif;
+    font-size:12px;
+    letter-spacing:2px;
+}
+
+.logo strong{
+    display:block;
+
+    font-family:Georgia,serif;
+    font-size:15px;
+    font-weight:500;
+}
+
+.logo small{
+    display:block;
+    margin-top:3px;
+
+    color:#77736c;
+    font-size:9px;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+}
+
+.menu nav{
+    display:flex;
+    align-items:center;
+    gap:8px;
+}
+
+.menu-item{
+    position:relative;
+
+    padding:10px 14px;
+
+    color:#aaa59d;
+    font-size:10px;
+    letter-spacing:1.5px;
+    text-decoration:none;
+    text-transform:uppercase;
+
+    transition:color .3s ease;
+}
+
+.menu-item::after{
+    content:"";
+
+    position:absolute;
+    left:14px;
+    right:14px;
+    bottom:4px;
+
+    height:1px;
+
+    background:var(--dourado);
+
+    transform:scaleX(0);
+    transition:transform .3s ease;
+}
+
+.menu-item:hover,
+.menu-item.ativo{
+    color:var(--dourado);
+}
+
+.menu-item:hover::after,
+.menu-item.ativo::after{
+    transform:scaleX(1);
+}
+
+/* ESTRUTURA */
+
+main{
+    width:100%;
+}
+
+section{
+    position:relative;
+    min-height:100vh;
+}
+
+/* HERO */
+
+.hero{
+    min-height:100vh;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    padding:120px 30px 80px;
+
+    text-align:center;
+}
+
+.hero-conteudo{
+    max-width:800px;
+}
+
+.legenda{
+    display:block;
+
+    margin-bottom:20px;
+
+    color:var(--dourado);
+
+    font-size:10px;
+    font-weight:600;
+    letter-spacing:4px;
+}
+
+.hero h1{
+    font-family:Georgia,serif;
+    font-size:clamp(55px,9vw,105px);
+    font-weight:500;
+    letter-spacing:2px;
+    line-height:1;
+
+    text-shadow:0 5px 25px rgba(0,0,0,.8);
+}
+
+.hero h1::first-letter{
+    color:var(--vermelho);
+}
+
+.hero p{
+    max-width:600px;
+    margin:30px auto 38px;
+
+    color:var(--texto-secundario);
+
+    font-size:15px;
+    line-height:1.8;
+}
+
+.botao{
+    display:inline-flex;
+    align-items:center;
+    gap:18px;
+
+    padding:13px 22px;
+
+    border:1px solid var(--dourado);
+
+    color:var(--dourado);
+    font-size:10px;
+    font-weight:600;
+    letter-spacing:2px;
+    text-decoration:none;
+    text-transform:uppercase;
+
+    transition:
+        background .3s ease,
+        color .3s ease,
+        transform .3s ease;
+}
+
+.botao span{
+    font-size:15px;
+}
+
+.botao:hover{
+    background:var(--dourado);
+    color:#080a0c;
+    transform:translateY(-2px);
+}
+
+/* SEÇÕES */
+
+.secao{
+    min-height:100vh;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+
+    max-width:1200px;
+    margin:auto;
+
+    padding:120px 40px;
+}
+
+.secao-cabecalho{
+    max-width:750px;
+}
+
+.secao-cabecalho h2{
+    margin-bottom:25px;
+
+    font-family:Georgia,serif;
+    font-size:clamp(35px,5vw,60px);
+    font-weight:500;
+    line-height:1.1;
+}
+
+.secao-cabecalho p{
+    color:var(--texto-secundario);
+    font-size:14px;
+    line-height:1.8;
+}
+
+/* INFORMAÇÕES */
+
+.informacoes-jogo{
+    display:flex;
+    gap:80px;
+
+    margin-top:65px;
+    padding-top:25px;
+
+    border-top:1px solid var(--borda);
+}
+
+.informacoes-jogo div{
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+}
+
+.informacoes-jogo span{
+    color:#77736c;
+    font-size:9px;
+    letter-spacing:2px;
+}
+
+.informacoes-jogo strong{
+    color:var(--texto);
+    font-family:Georgia,serif;
+    font-size:14px;
+    font-weight:500;
+}
+
+/* KRAT */
+
+.elementos-krat{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+
+    margin-top:65px;
+}
+
+.elementos-krat article{
+    position:relative;
+
+    min-height:230px;
+    padding:30px;
+
+    background:rgba(10,12,14,.72);
+    border:1px solid var(--borda);
+
+    transition:
+        transform .3s ease,
+        border-color .3s ease,
+        background .3s ease;
+}
+
+.elementos-krat article:hover{
+    transform:translateY(-5px);
+    border-color:rgba(165,138,82,.65);
+    background:rgba(17,20,22,.9);
+}
+
+.elementos-krat span{
+    color:var(--dourado);
+
+    font-family:Georgia,serif;
+    font-size:13px;
+    letter-spacing:2px;
+}
+
+.elementos-krat h3{
+    margin:35px 0 15px;
+
+    font-family:Georgia,serif;
+    font-size:24px;
+    font-weight:500;
+}
+
+.elementos-krat p{
+    color:var(--texto-secundario);
+    font-size:13px;
+    line-height:1.7;
+}
+
+/* MÚSICAS */
+
+.lista-musicas{
+    margin-top:55px;
+
+    border-top:1px solid var(--borda);
+}
+
+.musica{
+    display:grid;
+    grid-template-columns:70px 1fr auto;
+    align-items:center;
+    gap:25px;
+
+    padding:25px 10px;
+
+    border-bottom:1px solid rgba(165,138,82,.15);
+
+    transition:
+        background .3s ease,
+        padding .3s ease;
+}
+
+.musica:hover{
+    padding-left:20px;
+    background:rgba(165,138,82,.05);
+}
+
+.musica-numero{
+    color:var(--dourado);
+
+    font-family:Georgia,serif;
+    font-size:13px;
+}
+
+.musica h3{
+    margin-bottom:7px;
+
+    font-family:Georgia,serif;
+    font-size:20px;
+    font-weight:500;
+}
+
+.musica p{
+    color:#77736c;
+    font-size:12px;
+}
+
+.musica-botao{
+    width:34px;
+    height:34px;
+
+    background:transparent;
+    border:1px solid var(--borda);
+
+    color:var(--dourado);
+
+    font-size:18px;
+
+    cursor:pointer;
+
+    transition:
+        background .3s ease,
+        color .3s ease;
+}
+
+.musica-botao:hover{
+    background:var(--dourado);
+    color:#080a0c;
+}
+
+/* DLC */
+
+.dlc{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    min-height:90vh;
+
+    text-align:center;
+}
+
+.dlc-conteudo{
+    max-width:700px;
+}
+
+.dlc h2{
+    margin-bottom:20px;
+
+    font-family:Georgia,serif;
+    font-size:clamp(55px,8vw,95px);
+    font-weight:500;
+}
+
+.dlc p{
+    margin-bottom:35px;
+
+    color:var(--texto-secundario);
+}
+
+/* FOOTER */
+
+footer{
+    padding:35px 20px;
+
+    background:rgba(5,7,8,.9);
+    border-top:1px solid var(--borda);
+
+    text-align:center;
+}
+
+footer p{
+    color:#77736c;
+    font-size:10px;
+    letter-spacing:1px;
+}
+
+footer p + p{
+    margin-top:8px;
+}
+
+/* RESPONSIVIDADE */
+
+@media(max-width:850px){
+
+    .menu{
+        padding:0 25px;
+    }
+
+    .menu nav{
+        gap:0;
+    }
+
+    .menu-item{
+        padding:10px 8px;
+        font-size:9px;
+    }
+
+    .secao{
+        padding:110px 25px;
+    }
+
+    .elementos-krat{
+        grid-template-columns:1fr;
+    }
+
+    .informacoes-jogo{
+        gap:35px;
+        flex-wrap:wrap;
+    }
+}
+
+@media(max-width:600px){
+
+    .menu{
+        height:auto;
+        min-height:70px;
+        flex-direction:column;
+        gap:12px;
+        padding:14px 15px;
+    }
+
+    .menu nav{
+        width:100%;
+        justify-content:center;
+        flex-wrap:wrap;
+    }
+
+    .hero{
+        padding-top:150px;
+    }
+
+    .hero h1{
+        font-size:55px;
+    }
+
+    .secao{
+        padding:100px 20px;
+    }
+
+    .secao-cabecalho h2{
+        font-size:38px;
+    }
+
+    .informacoes-jogo{
+        display:grid;
+        grid-template-columns:1fr 1fr;
+        gap:25px;
+    }
+
+    .musica{
+        grid-template-columns:40px 1fr auto;
+        gap:15px;
+    }
+}
+
+@media(max-width:420px){
+
+    .logo strong{
+        font-size:13px;
+    }
+
+    .logo small{
+        font-size:8px;
+    }
+
+    .menu-item{
+        padding:8px 6px;
+        font-size:8px;
+        letter-spacing:1px;
+    }
+
+    .hero h1{
+        font-size:45px;
+    }
+
+    .informacoes-jogo{
+        grid-template-columns:1fr;
+    }
+}
+
+.musica-conteudo{
+    min-width:0;
+}
+
+.musica-conteudo > p{
+    max-height:0;
+    margin:0;
+    overflow:hidden;
+    opacity:0;
+
+    transition:
+        max-height .4s ease,
+        margin .4s ease,
+        opacity .3s ease;
+}
+
+.musica.aberta .musica-conteudo > p{
+    max-height:100px;
+    margin-bottom:15px;
+    opacity:1;
+}
+
+.musica-detalhes{
+    max-height:0;
+    overflow:hidden;
+    opacity:0;
+
+    transition:
+        max-height .4s ease,
+        opacity .3s ease;
+}
+
+.musica.aberta .musica-detalhes{
+    max-height:40px;
+    opacity:1;
+}
+
+.musica-detalhes span{
+    color:var(--dourado);
+    font-size:9px;
+    letter-spacing:1.5px;
+}
+
+.musica.aberta{
+    background:rgba(165,138,82,.06);
+}
+
+.musica-botao{
+    flex-shrink:0;
+}
