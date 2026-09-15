@@ -4,13 +4,30 @@ const menuItens = document.querySelectorAll('.menu-item');
 
 let backgroundAtual = 1;
 
-const imagens = {
+const imagensPrincipal = {
     1: 'img/bg-hero.jpeg',
     2: 'img/bg-krat.jpeg',
     3: 'img/bg-atmosfera.jpeg',
     4: 'img/bg-musica.jpeg',
     5: 'img/bg-lies-dlc.jpeg'
 };
+
+const imagensDlc = {
+    1: 'img/bg-dlc.png',
+    2: 'img/bg-dlc.png',
+    3: 'img/bg-dlc-jornada.png',
+    4: 'img/bg-dlc-musica.png',
+    5: 'img/bg-dlc-final.png'
+};
+
+const estaNaDlc = window.location.pathname.includes('dlc.html');
+
+const imagens = estaNaDlc
+    ? imagensDlc
+    : imagensPrincipal;
+
+backgrounds[0].style.backgroundImage =
+    `url("${imagens[1]}")`;
 
 function trocarBackground(numero) {
     if (numero === backgroundAtual) {
@@ -59,7 +76,8 @@ const observador = new IntersectionObserver(
         });
     },
     {
-        threshold: 0.45
+        rootMargin: '-40% 0px -40% 0px',
+        threshold: 0
     }
 );
 
