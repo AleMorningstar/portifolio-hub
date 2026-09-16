@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 220" role="img" aria-labelledby="title desc">
+  <title id="title">Ornamento dourado do Portfólio HUB</title>
+  <desc id="desc">Divisor ornamental simétrico com arabescos, detalhes mecânicos e um emblema central.</desc>
+
+  <g fill="none" stroke="#a58a52" stroke-linecap="round" stroke-linejoin="round">
+    <!-- linhas externas -->
+    <path stroke-width="1.5" d="M55 110H500 M1100 110H1545"/>
+    <path stroke-width="1" d="M90 104H430 M1170 104H1510"/>
+
+    <!-- pequenos losangos externos -->
+    <path stroke-width="1.5" d="M70 110l12-12 12 12-12 12z M1518 110l12-12 12 12-12 12z"/>
+    <circle cx="108" cy="110" r="3" stroke-width="1.2"/>
+    <circle cx="1492" cy="110" r="3" stroke-width="1.2"/>
+
+    <!-- ornamentos laterais -->
+    <g stroke-width="1.5">
+      <path d="M430 110c25-2 34-18 54-18 13 0 20 7 28 18-8 11-15 18-28 18-20 0-29-16-54-18z"/>
+      <path d="M1170 110c-25-2-34-18-54-18-13 0-20 7-28 18 8 11 15 18 28 18 20 0 29-16 54-18z"/>
+      <path d="M470 110c16-10 25-22 42-22 10 0 17 5 24 13"/>
+      <path d="M1130 110c-16-10-25-22-42-22-10 0-17 5-24 13"/>
+      <path d="M470 110c16 10 25 22 42 22 10 0 17-5 24-13"/>
+      <path d="M1130 110c-16 10-25 22-42 22-10 0-17-5-24-13"/>
+    </g>
+
+    <!-- engrenagens -->
+    <g stroke-width="1.4">
+      <circle cx="535" cy="110" r="17"/>
+      <circle cx="535" cy="110" r="8"/>
+      <circle cx="1065" cy="110" r="17"/>
+      <circle cx="1065" cy="110" r="8"/>
+      <path d="M535 89v8 M535 123v8 M514 110h8 M548 110h8 M520 95l6 6 M544 119l6 6 M550 95l-6 6 M526 119l-6 6"/>
+      <path d="M1065 89v8 M1065 123v8 M1044 110h8 M1078 110h8 M1050 95l6 6 M1074 119l6 6 M1080 95l-6 6 M1056 119l-6 6"/>
+    </g>
+
+    <!-- filigrana central -->
+    <g stroke-width="1.5">
+      <path d="M800 30v45 M800 145v45"/>
+      <path d="M800 52l-8 18 8 10 8-10z M800 150l-8-10 8-10 8 10z"/>
+      <path d="M800 78l-39 32 39 32 39-32z"/>
+      <path d="M800 89l-25 21 25 21 25-21z"/>
+
+      <!-- arabescos -->
+      <path d="M761 110c-28-31-54-43-73-29-14 10-9 28 7 30 17 2 23-13 13-23"/>
+      <path d="M839 110c28-31 54-43 73-29 14 10 9 28-7 30-17 2-23-13-13-23"/>
+      <path d="M761 110c-28 31-54 43-73 29-14-10-9-28 7-30 17-2 23 13 13 23"/>
+      <path d="M839 110c28 31 54 43 73 29 14-10 9-28-7-30-17-2-23 13-13 23"/>
+
+      <!-- folhas -->
+      <path d="M706 78c-15-2-25-8-32-19 16 1 27 6 32 19z"/>
+      <path d="M894 78c15-2 25-8 32-19-16 1-27 6-32 19z"/>
+      <path d="M706 142c-15 2-25 8-32 19 16-1 27-6 32-19z"/>
+      <path d="M894 142c15 2 25 8 32 19-16-1-27-6-32-19z"/>
+
+      <!-- pequenos elementos mecânicos -->
+      <path d="M650 110h42 M950 110h-42"/>
+      <path d="M672 101l10 9-10 9 M928 101l-10 9 10 9"/>
+      <circle cx="650" cy="110" r="3"/>
+      <circle cx="950" cy="110" r="3"/>
+    </g>
+
+    <!-- estrela central -->
+    <path fill="#a58a52" stroke="none" d="M800 94l5 11 11 5-11 5-5 11-5-11-11-5 11-5z"/>
+  </g>
+</svg>

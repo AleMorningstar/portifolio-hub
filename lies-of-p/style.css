@@ -75,16 +75,16 @@ body{
     top:0;
     left:0;
     width:100%;
-    height:76px;
+    height:62px;
     z-index:10;
 
     display:flex;
     align-items:center;
     justify-content:space-between;
 
-    padding:0 55px;
+    padding:0 45px;
 
-    background:rgba(7,9,10,.86);
+    background:rgba(7,9,10,.88);
     border-bottom:1px solid var(--borda);
     backdrop-filter:blur(8px);
 }
@@ -99,8 +99,8 @@ body{
 }
 
 .logo > span{
-    width:38px;
-    height:38px;
+    width:32px;
+    height:32px;
 
     display:flex;
     align-items:center;
@@ -110,28 +110,26 @@ body{
     color:var(--dourado);
 
     font-family:Georgia,serif;
-    font-size:12px;
+    font-size:10px;
     letter-spacing:2px;
 }
 
 .logo strong{
     display:block;
-
     font-family:Georgia,serif;
-    font-size:15px;
+    font-size:13px;
     font-weight:500;
 }
 
 .logo small{
     display:block;
-    margin-top:3px;
+    margin-top:2px;
 
     color:#77736c;
-    font-size:9px;
-    letter-spacing:1.5px;
+    font-size:8px;
+    letter-spacing:1.4px;
     text-transform:uppercase;
 }
-
 .menu nav{
     display:flex;
     align-items:center;
@@ -187,6 +185,50 @@ main{
 section{
     position:relative;
     min-height:100vh;
+    overflow:hidden;
+}
+
+/* BORDAS GÓTICAS */
+
+.borda-gotica{
+    position:absolute;
+    width:150px;
+    height:auto;
+
+    opacity:.75;
+
+    pointer-events:none;
+    z-index:1;
+}
+
+.borda-superior-esquerda{
+    top:15px;
+    left:15px;
+}
+
+.borda-superior-direita{
+    top:15px;
+    right:15px;
+    transform:scaleX(-1);
+}
+
+.borda-inferior-esquerda{
+    bottom:15px;
+    left:15px;
+    transform:scaleY(-1);
+}
+
+.borda-inferior-direita{
+    bottom:15px;
+    right:15px;
+    transform:scale(-1);
+}
+
+/* mantém o conteúdo acima das bordas */
+
+.secao > *:not(.borda-gotica){
+    position:relative;
+    z-index:2;
 }
 
 /* HERO */
@@ -279,19 +321,17 @@ section{
 
 .secao{
     min-height:100vh;
+    width:100%;
 
     display:flex;
     flex-direction:column;
     justify-content:center;
 
-    max-width:1200px;
-    margin:auto;
-
-    padding:120px 40px;
+    padding:140px 12%;
 }
 
 .secao-cabecalho{
-    max-width:750px;
+    max-width:850px;
 }
 
 .secao-cabecalho h2{
@@ -428,6 +468,10 @@ section{
     font-size:13px;
 }
 
+.musica-conteudo{
+    min-width:0;
+}
+
 .musica h3{
     margin-bottom:7px;
 
@@ -436,14 +480,59 @@ section{
     font-weight:500;
 }
 
-.musica p{
+.musica-conteudo > p{
+    max-height:0;
+    margin:0;
+
+    overflow:hidden;
+    opacity:0;
+
     color:#77736c;
     font-size:12px;
+
+    transition:
+        max-height .4s ease,
+        margin .4s ease,
+        opacity .3s ease;
+}
+
+.musica.aberta .musica-conteudo > p{
+    max-height:100px;
+    margin-bottom:15px;
+    opacity:1;
+}
+
+.musica-detalhes{
+    max-height:0;
+
+    overflow:hidden;
+    opacity:0;
+
+    transition:
+        max-height .4s ease,
+        opacity .3s ease;
+}
+
+.musica.aberta .musica-detalhes{
+    max-height:40px;
+    opacity:1;
+}
+
+.musica-detalhes span{
+    color:var(--dourado);
+    font-size:9px;
+    letter-spacing:1.5px;
+}
+
+.musica.aberta{
+    background:rgba(165,138,82,.06);
 }
 
 .musica-botao{
     width:34px;
     height:34px;
+
+    flex-shrink:0;
 
     background:transparent;
     border:1px solid var(--borda);
@@ -494,6 +583,30 @@ section{
     color:var(--texto-secundario);
 }
 
+/* DIVISOR */
+
+.divisor{
+    width:100%;
+
+    display:flex;
+
+    justify-content:center;
+    align-items:center;
+
+    padding:20px 60px;
+
+    background:transparent;
+}
+
+.divisor img{
+    width:100%;
+    max-width:1000px;
+
+    height:auto;
+
+    display:block;
+}
+
 /* FOOTER */
 
 footer{
@@ -533,7 +646,7 @@ footer p + p{
     }
 
     .secao{
-        padding:110px 25px;
+        padding:120px 8%;
     }
 
     .elementos-krat{
@@ -544,6 +657,10 @@ footer p + p{
         gap:35px;
         flex-wrap:wrap;
     }
+
+    .borda-gotica{
+        width:110px;
+    }
 }
 
 @media(max-width:600px){
@@ -551,8 +668,10 @@ footer p + p{
     .menu{
         height:auto;
         min-height:70px;
+
         flex-direction:column;
         gap:12px;
+
         padding:14px 15px;
     }
 
@@ -571,7 +690,7 @@ footer p + p{
     }
 
     .secao{
-        padding:100px 20px;
+        padding:110px 20px;
     }
 
     .secao-cabecalho h2{
@@ -587,6 +706,40 @@ footer p + p{
     .musica{
         grid-template-columns:40px 1fr auto;
         gap:15px;
+    }
+
+    .borda-gotica{
+        width:75px;
+        opacity:.55;
+    }
+
+    .borda-superior-esquerda{
+        top:15px;
+        left:10px;
+    }
+
+    .borda-superior-direita{
+        top:15px;
+        right:10px;
+    }
+
+    .borda-inferior-esquerda{
+        bottom:15px;
+        left:10px;
+    }
+
+    .borda-inferior-direita{
+        bottom:15px;
+        right:10px;
+    }
+
+    .divisor{
+        padding:18px 0;
+    }
+
+    .divisor img{
+        width:100%;
+        max-width:1000px;
     }
 }
 
@@ -613,55 +766,8 @@ footer p + p{
     .informacoes-jogo{
         grid-template-columns:1fr;
     }
-}
 
-.musica-conteudo{
-    min-width:0;
-}
-
-.musica-conteudo > p{
-    max-height:0;
-    margin:0;
-    overflow:hidden;
-    opacity:0;
-
-    transition:
-        max-height .4s ease,
-        margin .4s ease,
-        opacity .3s ease;
-}
-
-.musica.aberta .musica-conteudo > p{
-    max-height:100px;
-    margin-bottom:15px;
-    opacity:1;
-}
-
-.musica-detalhes{
-    max-height:0;
-    overflow:hidden;
-    opacity:0;
-
-    transition:
-        max-height .4s ease,
-        opacity .3s ease;
-}
-
-.musica.aberta .musica-detalhes{
-    max-height:40px;
-    opacity:1;
-}
-
-.musica-detalhes span{
-    color:var(--dourado);
-    font-size:9px;
-    letter-spacing:1.5px;
-}
-
-.musica.aberta{
-    background:rgba(165,138,82,.06);
-}
-
-.musica-botao{
-    flex-shrink:0;
+    .borda-gotica{
+        width:60px;
+    }
 }
