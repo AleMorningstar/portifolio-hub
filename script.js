@@ -62,3 +62,91 @@ function atualizarMenuAtivo() {
 window.addEventListener("scroll", atualizarMenuAtivo);
 
 atualizarMenuAtivo();
+
+const cardsProjetos = document.querySelectorAll(".projeto-card");
+
+const observadorProjetos = new IntersectionObserver(function (entradas) {
+
+    entradas.forEach(function (entrada) {
+
+        if (entrada.isIntersecting) {
+            entrada.target.classList.add("visivel");
+        }
+
+    });
+
+});
+
+cardsProjetos.forEach(function (card) {
+    observadorProjetos.observe(card);
+});
+
+const tecnologias = document.querySelectorAll(".tecnologia");
+
+const observadorTecnologias = new IntersectionObserver(function (entradas) {
+
+    entradas.forEach(function (entrada) {
+
+        if (entrada.isIntersecting) {
+            entrada.target.classList.add("visivel");
+        }
+
+    });
+
+});
+
+tecnologias.forEach(function (tecnologia) {
+    observadorTecnologias.observe(tecnologia);
+});
+
+const competencias = document.querySelectorAll(".competencia");
+
+const observadorCompetencias = new IntersectionObserver(function (entradas) {
+
+    entradas.forEach(function (entrada) {
+
+        if (entrada.isIntersecting) {
+            entrada.target.classList.add("visivel");
+        }
+
+    });
+
+});
+
+competencias.forEach(function (competencia) {
+    observadorCompetencias.observe(competencia);
+});
+
+const elementosSobre = document.querySelectorAll(".sobre-foto, .sobre-texto");
+
+const observadorSobre = new IntersectionObserver(function (entradas) {
+
+    entradas.forEach(function (entrada) {
+
+        if (entrada.isIntersecting) {
+            entrada.target.classList.add("visivel");
+        }
+
+    });
+
+});
+
+elementosSobre.forEach(function (elemento) {
+    observadorSobre.observe(elemento);
+});
+
+const contato = document.querySelector("#contato");
+
+const observadorContato = new IntersectionObserver(function (entradas) {
+
+    entradas.forEach(function (entrada) {
+
+        if (entrada.isIntersecting) {
+            contato.classList.add("visivel");
+        }
+
+    });
+
+});
+
+observadorContato.observe(contato);

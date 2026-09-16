@@ -1787,3 +1787,65 @@ section > *:not(.borda-gotica) {
         font-size: 8px;
     }
 }
+
+.projeto-card {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.projeto-card.visivel {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.tecnologia {
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+.tecnologia.visivel {
+    opacity: 1;
+}
+
+.competencia {
+    opacity: 0;
+    transform: translateY(15px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.competencia.visivel {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.sobre-foto,
+.sobre-texto {
+    opacity: 0;
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.sobre-foto {
+    transform: translateX(-25px);
+}
+
+.sobre-texto {
+    transform: translateX(25px);
+}
+
+.sobre-foto.visivel,
+.sobre-texto.visivel {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+#contato > * {
+    opacity: 0;
+    transform: translateY(15px);
+    transition: opacity 0.9s ease, transform 0.9s ease;
+}
+
+#contato.visivel > * {
+    opacity: 1;
+    transform: translateY(0);
+}
