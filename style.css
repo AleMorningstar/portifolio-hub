@@ -561,6 +561,49 @@ h2 {
     background-color: rgba(165, 138, 82, 0.08);
 }
 
+/* =========================
+  CURRÌCULO
+========================= */
+.hero-curriculo {
+    margin-top: 18px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+
+    color: var(--cor-texto-secundario);
+
+    transition: 0.3s ease;
+}
+
+.hero-curriculo span {
+    color: var(--cor-destaque);
+
+    font-size: 22px;
+
+    line-height: 1;
+
+    transition: transform 0.3s ease;
+}
+
+.hero-curriculo small {
+    margin-top: 7px;
+
+    font-family: "Inter", sans-serif;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+}
+
+.hero-curriculo:hover {
+    color: var(--cor-destaque);
+}
+
+.hero-curriculo:hover span {
+    transform: translateY(4px);
+}
 
 /* =========================
    19. PROJETOS
@@ -924,6 +967,85 @@ h2 {
     letter-spacing: 0.5px;
 }
 
+/* =========================
+   COMPETÊNCIAS
+========================= */
+
+.competencias-section {
+    padding: 100px 60px;
+
+    background: transparent;
+}
+
+.competencias-container {
+    max-width: 1200px;
+
+    margin: 60px auto 0;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 1px;
+
+    border: 1px solid rgba(165, 138, 82, 0.25);
+}
+
+.competencia {
+    position: relative;
+
+    padding: 32px;
+
+    min-height: 210px;
+
+    background-color: rgba(13, 17, 20, 0.35);
+
+    border: 1px solid rgba(165, 138, 82, 0.15);
+
+    transition:
+        background-color 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.competencia:hover {
+    background-color: rgba(21, 26, 30, 0.65);
+
+    border-color: rgba(165, 138, 82, 0.45);
+}
+
+.competencia-numero {
+    display: block;
+
+    margin-bottom: 25px;
+
+    color: var(--cor-destaque);
+
+    font-family: "Cinzel", serif;
+
+    font-size: 12px;
+
+    letter-spacing: 3px;
+}
+
+.competencia h3 {
+    margin-bottom: 12px;
+
+    color: var(--cor-texto);
+
+    font-size: 22px;
+
+    font-weight: 600;
+}
+
+.competencia p {
+    max-width: 420px;
+
+    color: var(--cor-texto-secundario);
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
 
 /* =========================
    27. SOBRE MIM
@@ -1532,14 +1654,38 @@ section > *:not(.borda-gotica) {
     header {
     overflow: visible;
     }
+
+    .competencias-section {
+    padding: 70px 20px;
+    }
+
+    .competencias-container {
+    grid-template-columns: 1fr;
+
+    margin-top: 40px;
+    }
+
+    .competencia {
+    min-height: auto;
+
+    padding: 30px 25px;
+    }    
+
 }
 
 
 /* =========================
-   34. RESPONSIVIDADE
-   CELULARES PEQUENOS
+   COMPETÊNCIAS
+   TABLET
 ========================= */
 
+@media (max-width: 1000px) {
+
+    .competencias-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
 /* =========================
    MENU MOBILE ABERTO
 ========================= */
