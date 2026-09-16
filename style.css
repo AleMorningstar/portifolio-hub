@@ -217,10 +217,14 @@ header {
     transition: width 0.3s ease;
 }
 
-.menu a:not(.logo):hover::after {
+.menu a:not(.logo):hover::after,
+.menu a:not(.logo).ativo::after {
     width: 100%;
 }
 
+.menu a.ativo {
+    color: var(--cor-destaque);
+}
 
 /* =========================
    8. SEPARADOR DO CONTATO

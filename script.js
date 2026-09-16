@@ -21,3 +21,44 @@ linksMenu.forEach(function (link) {
     });
 
 });
+
+
+//rolagem das seções e menu acompanhando: 
+const secoes = document.querySelectorAll("section[id]");
+const linksMenuSecoes = document.querySelectorAll(".menu-grupo a[href^='#']");
+
+function atualizarMenuAtivo() {
+
+    let secaoAtual = "";
+
+    const estaNoFinal =
+        window.innerHeight + window.scrollY >=
+        document.documentElement.scrollHeight - 5;
+
+    if (estaNoFinal) {
+        secaoAtual = "contato";
+    } else {
+
+        secoes.forEach(function (secao) {
+
+            const distanciaTopo = secao.getBoundingClientRect().top;
+
+            if (distanciaTopo <= 150) {
+                secaoAtual = secao.id;
+            }
+        });
+    }
+
+    linksMenuSecoes.forEach(function (link) {
+
+        link.classList.remove("ativo");
+
+        if (link.getAttribute("href") === `#${secaoAtual}`) {
+            link.classList.add("ativo");
+        }
+    });
+}
+
+window.addEventListener("scroll", atualizarMenuAtivo);
+
+atualizarMenuAtivo();
