@@ -690,7 +690,7 @@ header::after {
 
 .hero-nome {
     margin: 0;
-
+    margin-bottom: 28px;
     font-family: "Cinzel", serif;
 
     font-size: 28px;
@@ -799,7 +799,7 @@ header::after {
     gap: 15px;
 
     margin-top: 65px;
-
+    margin-bottom: 22px;
     color: rgba(241, 238, 230, 0.78);
 
     font-family: "Cormorant", serif;
@@ -821,50 +821,109 @@ header::after {
 }
 
 
+
+
 /* =========================
-   21. CURRÍCULO
+   21 - BOTÃO CURRÍCULO
 ========================= */
 
-.hero-curriculo {
-    margin-top: 18px;
+.botao-curriculo {
+    position: relative;
 
-    display: flex;
-
-    flex-direction: column;
-
+    display: inline-flex;
     align-items: center;
+    justify-content: center;
 
-    color: rgba(241, 238, 230, 0.75);
+    min-width: 150px;
+    padding: 13px 26px;
 
-    transition: 0.3s ease;
-}
+    color: #f4f2ec;
 
-.hero-curriculo span {
-    color: var(--cor-destaque);
-
-    font-size: 22px;
-
-    line-height: 1;
-
-    transition: transform 0.3s ease;
-}
-
-.hero-curriculo small {
-    margin-top: 7px;
-
-    font-family: "Inter", sans-serif;
-
-    font-size: 9px;
-
+    font-family: "Cinzel", serif;
+    font-size: 11px;
+    font-weight: 600;
     letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(30, 28, 24, 0.92),
+            rgba(12, 14, 16, 0.92)
+        );
+
+    border: 1px solid rgba(165, 138, 82, 0.65);
+
+    box-shadow:
+        0 5px 18px rgba(0, 0, 0, 0.45);
+
+    transition:
+        color 0.3s ease,
+        border-color 0.3s ease,
+        background 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
-.hero-curriculo:hover {
-    color: var(--cor-destaque);
+.botao-curriculo::before,
+.botao-curriculo::after {
+    content: "";
+
+    position: absolute;
+
+    width: 8px;
+    height: 8px;
+
+    border-color: var(--cor-destaque);
+    border-style: solid;
+
+    opacity: 0.8;
+
+    transition:
+        width 0.3s ease,
+        height 0.3s ease,
+        opacity 0.3s ease;
 }
 
-.hero-curriculo:hover span {
-    transform: translateY(4px);
+.botao-curriculo::before {
+    top: 5px;
+    left: 5px;
+
+    border-width: 1px 0 0 1px;
+}
+
+.botao-curriculo::after {
+    right: 5px;
+    bottom: 5px;
+
+    border-width: 0 1px 1px 0;
+}
+
+.botao-curriculo:hover {
+    color: #fffdf7;
+
+    border-color: rgba(165, 138, 82, 0.95);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(38, 35, 29, 0.95),
+            rgba(13, 16, 18, 0.95)
+        );
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 24px rgba(0, 0, 0, 0.55),
+        0 0 16px rgba(165, 138, 82, 0.12);
+}
+
+.botao-curriculo:hover::before,
+.botao-curriculo:hover::after {
+    width: 12px;
+    height: 12px;
+    opacity: 1;
 }
 
 
@@ -2205,6 +2264,16 @@ footer p {
         font-size: 14px;
         line-height: 1.7;
     }
+
+    .projeto-links {
+    gap: 20px;
+    flex-wrap: wrap;
+    }
+
+    .projeto-link {
+    font-size: 9px;
+    letter-spacing: 1.2px;
+    }
 }
 
 
@@ -2583,4 +2652,71 @@ h2 {
 
     text-shadow:
         0 3px 10px rgba(0, 0, 0, 0.95);
+}
+
+@media (max-width: 600px) {
+
+    .botao-curriculo {
+        min-width: 135px;
+        padding: 12px 22px;
+        font-size: 10px;
+        letter-spacing: 1.7px;
+    }
+
+}
+
+/* =========================
+   LINKS DOS PROJETOS
+========================= */
+
+.projeto-links {
+    margin-top: auto;
+    padding-top: 28px;
+
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    flex-wrap: wrap;
+}
+
+.projeto-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    color: var(--cor-destaque);
+
+    font-family: "Cinzel", serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    text-decoration: none;
+
+    transition:
+        color 0.3s ease,
+        gap 0.3s ease;
+}
+
+.projeto-link span {
+    font-size: 14px;
+    transition: transform 0.3s ease;
+}
+
+.projeto-link:hover {
+    color: #d1b878;
+}
+
+.projeto-link:hover span {
+    transform: translateX(4px);
+}
+
+/* LINK SECUNDÁRIO */
+
+.projeto-link-secundario {
+    color: rgba(241, 238, 230, 0.65);
+}
+
+.projeto-link-secundario:hover {
+    color: rgba(241, 238, 230, 0.95);
 }
