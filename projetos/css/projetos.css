@@ -1,0 +1,398 @@
+/* ================================
+   BASE DAS PÁGINAS DE PROJETOS
+================================ */
+
+:root {
+    --cor-fundo: #0d1114;
+    --cor-fundo-secundario: #151a1e;
+    --cor-texto: #f1eee6;
+    --cor-destaque: #a58a52;
+    --cor-vermelho: #a82b32;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    font-family: "Inter", sans-serif;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.projeto-fundo {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+
+    background-image:
+        linear-gradient(
+            rgba(8, 11, 13, 0.78),
+            rgba(8, 11, 13, 0.88)
+        ),
+        url("../../img/background-projetos.png");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+/* ================================
+   CABEÇALHO
+================================ */
+
+.pagina-projeto-header {
+    width: 100%;
+    padding: 28px 50px;
+    border-bottom: 1px solid rgba(165, 138, 82, 0.25);
+    background: rgba(7, 10, 12, 0.88);
+}
+
+.pagina-projeto-voltar {
+    color: rgba(241, 238, 230, 0.75);
+    font-family: "Cinzel", serif;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+}
+
+.pagina-projeto-voltar:hover {
+    color: var(--cor-destaque);
+}
+
+/* ================================
+   CONTEÚDO PRINCIPAL
+================================ */
+
+.pagina-projeto {
+    width: min(1000px, 90%);
+    margin: 0 auto;
+    padding: 110px 0;
+}
+
+/* ================================
+   CABEÇALHO DO PROJETO
+================================ */
+
+.pagina-projeto-cabecalho {
+    max-width: 750px;
+    margin-bottom: 90px;
+}
+
+.pagina-projeto-cabecalho .legenda {
+    display: block;
+    margin-bottom: 20px;
+    color: var(--cor-destaque);
+    font-family: "Cinzel", serif;
+    font-size: 10px;
+    letter-spacing: 3px;
+}
+
+.pagina-projeto-cabecalho h1 {
+    margin: 0 0 25px;
+    color: #f4f2ec;
+    font-family: "Cinzel", serif;
+    font-size: clamp(42px, 6vw, 70px);
+    font-weight: 600;
+    letter-spacing: 1px;
+    line-height: 1;
+    text-shadow:
+        0 3px 15px rgba(0, 0, 0, 0.95);
+}
+
+.pagina-projeto-cabecalho p {
+    max-width: 680px;
+    margin: 0;
+    padding-left: 15px;
+    border-left: 1px solid rgba(165, 138, 82, 0.45);
+    color: rgba(241, 238, 230, 0.88);
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+/* ================================
+   CONTEÚDO
+================================ */
+
+.pagina-projeto-conteudo {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 70px 60px;
+}
+
+.pagina-projeto-conteudo article {
+    position: relative;
+    padding-left: 22px;
+    border-left: 1px solid rgba(165, 138, 82, 0.25);
+}
+
+.pagina-projeto-label {
+    display: block;
+    margin-bottom: 15px;
+    color: var(--cor-destaque);
+    font-family: "Cinzel", serif;
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+.pagina-projeto-conteudo h2 {
+    margin: 0 0 18px;
+    color: #f4f2ec;
+    font-family: "Cinzel", serif;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+.pagina-projeto-conteudo p {
+    margin: 0;
+    color: rgba(241, 238, 230, 0.82);
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+/* ================================
+   TECNOLOGIAS
+================================ */
+
+.pagina-projeto-tecnologias {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.pagina-projeto-tecnologias span {
+    padding: 8px 12px;
+    border: 1px solid rgba(165, 138, 82, 0.35);
+    color: rgba(241, 238, 230, 0.85);
+    font-size: 10px;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+}
+
+/* ================================
+   BOTÕES
+================================ */
+
+.pagina-projeto-acoes {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    margin-top: 90px;
+    padding-top: 35px;
+    border-top: 1px solid rgba(165, 138, 82, 0.2);
+}
+
+.botao-projeto {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    padding: 12px 18px;
+    border: 1px solid var(--cor-destaque);
+    color: var(--cor-destaque);
+    font-family: "Cinzel", serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease;
+}
+
+.botao-projeto:hover {
+    background-color: var(--cor-destaque);
+    color: var(--cor-fundo);
+}
+
+.botao-secundario {
+    border-color: rgba(241, 238, 230, 0.25);
+    color: rgba(241, 238, 230, 0.7);
+}
+
+.botao-secundario:hover {
+    background-color: rgba(241, 238, 230, 0.08);
+    color: var(--cor-texto);
+}
+
+
+
+/* ================================
+   PREVIEW DO PROJETO
+================================ */
+
+.pagina-projeto-preview {
+    position: relative;
+    width: 100%;
+    margin-bottom: 90px;
+    padding: 12px;
+    border: 1px solid rgba(165, 138, 82, 0.35);
+    background: rgba(5, 8, 10, 0.45);
+}
+
+.pagina-projeto-preview::before,
+.pagina-projeto-preview::after {
+    content: "";
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    border-color: var(--cor-destaque);
+    border-style: solid;
+    opacity: 0.7;
+}
+
+.pagina-projeto-preview::before {
+    top: 6px;
+    left: 6px;
+    border-width: 1px 0 0 1px;
+}
+
+.pagina-projeto-preview::after {
+    right: 6px;
+    bottom: 6px;
+    border-width: 0 1px 1px 0;
+}
+
+.pagina-projeto-preview img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 600px;
+    object-fit: contain;
+    filter: brightness(0.9);
+}
+
+/* ================================
+   ORNAMENTOS
+================================ */
+
+.pagina-projeto {
+    position: relative;
+    overflow: hidden;
+}
+
+.projeto-ornamento {
+    position: absolute;
+    width: 190px;
+    height: auto;
+    opacity: 0.38;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.projeto-ornamento-esquerda {
+    top: -5px;
+    left: -185px;
+}
+
+.projeto-ornamento-direita {
+    top: -5px;
+    right: -185px;
+    transform: scaleX(-1);
+}
+
+.pagina-projeto > *:not(.projeto-ornamento) {
+    position: relative;
+    z-index: 2;
+}
+/* ================================
+   MOBILE
+================================ */
+
+@media (max-width: 700px) {
+
+    .pagina-projeto-header {
+        padding: 22px 25px;
+    }
+
+    .pagina-projeto {
+        width: 88%;
+        padding: 75px 0;
+    }
+
+    .pagina-projeto-cabecalho {
+        margin-bottom: 65px;
+    }
+
+    .pagina-projeto-cabecalho h1 {
+        font-size: 42px;
+    }
+
+    .pagina-projeto-cabecalho p {
+        font-size: 14px;
+    }
+
+    .pagina-projeto-conteudo {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .pagina-projeto-acoes {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-top: 65px;
+    }
+
+    .pagina-projeto-preview {
+    margin-bottom: 65px;
+    padding: 7px;
+    }
+
+    .pagina-projeto-preview::before,
+    .pagina-projeto-preview::after {
+    width: 25px;
+    height: 25px;
+    }
+
+    .projeto-ficha {
+    gap: 25px;
+    }
+}
+
+/* ================================
+   FICHA TÉCNICA
+================================ */
+
+.projeto-ficha {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 35px;
+    margin-top: 35px;
+    padding: 20px 0;
+    border-top: 1px solid rgba(165, 138, 82, 0.2);
+    border-bottom: 1px solid rgba(165, 138, 82, 0.2);
+}
+
+.projeto-ficha-item {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.projeto-ficha-item span {
+    color: rgba(241, 238, 230, 0.45);
+    font-family: "Cinzel", serif;
+    font-size: 8px;
+    font-weight: 600;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+}
+
+.projeto-ficha-item strong {
+    color: rgba(241, 238, 230, 0.9);
+    font-family: "Inter", sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
